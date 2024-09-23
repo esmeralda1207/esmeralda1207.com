@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promociones</title>
+  <link rel="shortcut icon" href="IMG/image.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="CSS/estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", sans-serif;
+    }
+
+    .w3-bar .w3-button {
+      padding: 16px;
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-icon-color {
+      color: #491f18;
+      font-size: 20px;
+    }
+
+    .w3-bar {
+      background-color: #fff;
+    }
+
+    /* Ajustes generales */
+    .product-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .product-card {
+      background-color: #f8f8f8;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      font-size: 1.5rem;
+      margin: 15px 0;
+      color: #57271e;
+    }
+
+    .product-card p {
+      color: #888;
+      font-size: 1.2rem;
+    }
+
+    .product-card .buy-button {
+      background-color: #57271e;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: inline-block;
+      text-align: center;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .product-card .buy-button:hover {
+      background-color: #8b0000;
+      color: white;
+    }
+
+    /* Carrusel */
+    .carousel-inner img {
+      height: 600px;
+      object-fit: cover;
+    }
+
+    .custom-footer {
+      background-color: #491f18;
+      /* Color de fondo del footer */
+      color: white;
+      /* Color del texto */
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .social-icons a {
+      color: white;
+      margin-left: 15px;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #ffcc00;
+      /* Color al pasar el ratón por encima */
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #555;
+      padding-top: 10px;
+      font-size: 1em;
+      color: #ccc;
+      /* Color del texto de copyright */
+    }
+
+    .escribeme-bebe {
+      background-color: #8bffef;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 5px;
+      /* Espaciado interno */
+      width: 100%;
+      /* Ancho completo */
+      height: auto;
+      /* Ajustar la altura automáticamente */
+      font-size: 0.8rem;
+      /* Tamaño de fuente más pequeño */
+      display: flex;
+      /* Usar flexbox */
+      justify-content: space-between;
+      /* Espacio entre los elementos */
+      align-items: center;
+      /* Centrar verticalmente */
+      opacity: 0;
+      /* Hacer el contenido invisible */
+      transition: opacity 0.5s ease;
+      /* Transición suave */
+    }
+
+    .escribeme-bebe:hover {
+      opacity: 1;
+      /* Hacer visible el contenido al pasar el cursor */
+    }
+
+    .escribeme-bebe h6,
+    .escribeme-bebe p,
+    .escribeme-bebe a {
+      margin: 0;
+      /* Eliminar márgenes */
+      padding: 0 10px;
+      /* Espaciado interno entre elementos */
+    }
+
+    .escribeme-bebe i {
+      font-size: 24px;
+      /* Tamaño del ícono */
+      margin: 0;
+      /* Eliminar márgenes */
+    }
+
+
+
+    
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- Navbar (sit on top) -->
+<div class="w3">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-wide">
+      <img src="IMG/image.png" alt="Logo" class="logo-img">
+    </a>
+
+
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home nav-icon-color"></i> Inicio</a>
+        <a href="recetas.html" class="w3-bar-item w3-button"><i class="fa fa-utensils nav-icon-color"></i> Recetas</a>
+        <a href="nosotros.html" class="w3-bar-item w3-button"><i class="fa fa-scroll nav-icon-color"></i> Nosotros</a>
+        <a href="promociones-ofertas.html" class="w3-bar-item w3-button"><i class="fa fa-tags nav-icon-color"></i>
+          Promociones y Ofertas</a>
+      </div>
+
+
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<br>
+
+
+
+
+
+ <!-- Carrusel -->
+ <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="Slide/Banner web promociones San Valentín floreado y delicado beige.jpg"
+              class="d-block w-100 dp-lg" alt="Pastelería 1">
+      </div>
+      <div class="carousel-item">
+          <img src="Slide/Banner web promociones San Valentín floreado y delicado beige (1).gif" class="d-block w-100 dp-lg"
+              alt="Pastelería 2">
+      </div>
+      <div class="carousel-item">
+          <img src="Slide/Banner web promociones San Valentín floreado y delicado beige.gif" class="d-block w-100 dp-lg" alt="Pastelería 3">
+      </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+  <!-- Contenido de Promociones -->
+  <div class="w3-container w3-center w3-padding-64">
+    <h2 class="w3-text-black w3-xxlarge">¡Descubre Nuestras Promociones Especiales!</h2>
+    <p class="w3-text-grey w3-large">
+      Este mes, nos complace ofrecerte descuentos exclusivos en tus productos Hershey's favoritos.
+      Aprovecha estas ofertas limitadas para disfrutar de los dulces y golosinas que amas. ¡No te los pierdas!
+    </p>
+  </div>
+
+  <!-- Contenedor de Productos -->
+  <div class="product-container">
+    <div class="row">
+      <!-- Tarjeta de Producto -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="product-card">
+          <img src="IMG/hershey milk.webp" alt="Hershey's Milk Chocolate">
+          <div class="w3-container">
+            <h3>Hershey's Milk Chocolate</h3>
+            <p class="w3-opacity">L. 50.00</p>
+            <a href="#" class="buy-button">Comprar ahora <i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segundo Producto -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="product-card">
+          <img src="IMG/kiss.webp" alt="Hershey's Kisses">
+          <div class="w3-container">
+            <h3>Hershey's Kisses</h3>
+            <p class="w3-opacity">L. 60.00</p>
+            <a href="#" class="buy-button">Comprar ahora <i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tercer Producto -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="product-card">
+          <img src="IMG/proxy-image (13).jpeg" alt="Hershey's Cookies 'n' Cream">
+          <div class="w3-container">
+            <h3>Hershey's Cookies 'n' Cream</h3>
+            <p class="w3-opacity">L. 55.00</p>
+            <a href="#" class="buy-button">Comprar ahora <i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuarto Producto -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="product-card">
+          <img src="IMG/R (2).jpeg" alt="Reese's Peanut Butter Cups">
+          <div class="w3-container">
+            <h3>Reese's Peanut Butter Cups</h3>
+            <p class="w3-opacity">L. 45.00</p>
+            <a href="#" class="buy-button">Comprar ahora <i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quinto Producto -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="product-card">
+          <img src="IMG/proxy-image (14).jpeg" alt="Hershey's Dark Chocolate">
+          <div class="w3-container">
+            <h3>Hershey's Dark Chocolate</h3>
+            <p class="w3-opacity">L. 52.00</p>
+            <a href="#" class="buy-button">Comprar ahora <i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sexto Producto -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="product-card">
+          <img src="IMG/proxy-image (15).jpeg" alt="Hershey's Caramel Chocolate">
+          <div class="w3-container">
+            <h3>Hershey's Caramel Chocolate</h3>
+            <p class="w3-opacity">L. 58.00</p>
+            <a href="#" class="buy-button">Comprar ahora <i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Séptimo Producto -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="product-card">
+          <img src="IMG/R (3).jpeg" alt="Hershey's Chocolate Syrup">
+          <div class="w3-container">
+            <h3>Hershey's Chocolate Syrup</h3>
+            <p class="w3-opacity">L. 70.00</p>
+            <a href="#" class="buy-button">Comprar ahora <i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Octavo Producto -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="product-card">
+          <img src="IMG/OIP (5).jpeg" alt="Hershey's Miniatures">
+          <div class="w3-container">
+            <h3>Hershey's Miniatures</h3>
+            <p class="w3-opacity">L. 65.00</p>
+            <a href="#" class="buy-button">Comprar ahora <i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Agrega más tarjetas de productos según sea necesario -->
+
+
+      <div class="row align-items-center my-5">
+        <!-- Imagen -->
+        <div class="col-md-6">
+          <img src="IMG/OIP (1).jpeg" alt="Hershey's Milk Chocolate" class="img-fluid">
+        </div>
+
+        <!-- Texto -->
+        <div class="col-md-6">
+          <div class="w3-container">
+            <h2> Chocolates Hershey's </h2>
+            <p>El clásico y delicioso chocolate dee de Hershey's, amado por generaciones. Perfecto para disfrutar en
+              cualquier momento y compartir con amigos y familiares. Este chocolate se derrite en tu boca, brindándote
+              una experiencia única e inolvidable.</p>
+            <p>Además, es un regalo ideal para ocasiones especiales, eventos y celebraciones. No te pierdas la
+              oportunidad de probar el sabor icónico de Hershey's.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="w3-container w3-center w3-padding-64  w3-text-white my-5" style="background-color: #491f18;">
+        <h2 class=" w3-xxlarge w3-text-white"><b>Beneficios Exclusivos</b></h2>
+        <div class="w3-row-padding w3-margin-top">
+          <br>
+          <br>
+          <div class="w3-third">
+
+            <i class="fa fa-gift w3-xxlarge w3-text-white"></i>
+            <h3>Regalos Exclusivos</h3>
+            <p>Obtén productos exclusivos al participar en nuestras promociones.</p>
+          </div>
+          <div class="w3-third">
+            <i class="fa fa-shipping-fast w3-xxlarge w3-text-white"></i>
+            <h3>Envío Gratuito</h3>
+            <p>Disfruta de envío gratuito en pedidos seleccionados durante nuestras promociones.</p>
+          </div>
+          <div class="w3-third">
+            <i class="fa fa-percent w3-xxlarge w3-text-white"></i>
+            <h3>Descuentos Especiales</h3>
+            <p>Descuentos exclusivos para los productos más populares de Hershey's.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="w3-container w3-center w3-padding-64 w3-light-grey">
+        <h2 class="w3-text-black w3-xxlarge">Lo que dicen nuestros clientes</h2>
+        <div class="w3-row-padding w3-margin-top">
+          <div class="w3-third">
+            <img src="IMG/proxy-image (9).jpeg" alt="Cliente 1" class="w3-circle" style="width:200px; height:220px;">
+            <br>
+            <br>
+            <p>"¡Las promociones de Hershey's son increíbles! Compré mis chocolates favoritos a un precio excelente." -
+              <b>Maria G.</b>
+            </p>
+          </div>
+          <div class="w3-third">
+            <img src="IMG/proxy-image (8).jpeg" alt="Cliente 2" class="w3-circle" style="width:200px; height:220px;">
+            <br>
+            <br>
+            <p>"Aproveché la oferta de envío gratuito y recibí mi pedido en perfectas condiciones." - <b>Juan P.</b></p>
+          </div>
+          <div class="w3-third">
+            <img src="IMG/proxy-image (10).jpeg" alt="Cliente 3" class="w3-circle" style="width:200px; height:220px;">
+            <br>
+            <br>
+            <p>"Siempre estoy atento a las promociones de Hershey's. ¡No me las pierdo por nada!" - <b>Ana L.</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-container w3-center w3-padding-64">
+        <h2 class="w3-text-black w3-xxlarge">Recomendaciones para ti</h2>
+        <p class="w3-text-grey w3-large">Basado en tus intereses, creemos que te gustarán estos productos:</p>
+        <div class="w3-row-padding w3-margin-top">
+          <div class="w3-third">
+            <img src="IMG/hershey cookis cream.jpeg" alt="Recomendación 1" class="w3-image">
+            <h3>Hershey's Cookies 'n' Creme <b>Giant</b></h3>
+            <p class="w3-opacity">20% de descuento</p>
+            <a href="#" class="w3-button w3-brown w3-round">Comprar ahora</a>
+          </div>
+          <div class="w3-third">
+            <img src="IMG/proxy-image (11).jpeg" alt="Recomendación 2" class="w3-image">
+            <h3>Hershey's Milk Chocolate <b>Giant</b></h3>
+            <p class="w3-opacity">Compra 3 y paga 2</p>
+            <a href="#" class="w3-button w3-brown w3-round">Comprar ahora</a>
+          </div>
+          <div class="w3-third">
+            <img src="IMG/proxy-image (12).jpeg" alt="Recomendación 3" class="w3-image">
+            <h3>Hershey's Special Dark<b>Giant</b></h3>
+            <p class="w3-opacity">30% de descuento</p>
+            <form action="/path-to-your-purchase-form" method="post">
+              <button type="submit" class="w3-button w3-brown w3-round">Comprar ahora</button>
+            </form>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+    <div class="w3-container w3-center w3-padding-64 w3-light-grey">
+      <h2 class="w3-text-black w3-xxlarge">¡Ofertas por tiempo limitado!</h2>
+      <p class="w3-text-grey w3-large">No pierdas la oportunidad de aprovechar nuestras ofertas exclusivas antes de que
+        se
+        acaben.</p>
+      <div id="countdown" class="w3-text-red w3-xxlarge"></div>
+    </div>
+  </div>
+
+  
+
+    <!-- Footer -->
+    <footer class="w3-container custom-footer">
+      <div class="footer-content">
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook w3-hover-opacity w3-large"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram w3-hover-opacity w3-large"></i>
+          </a>
+          <a href="https://www.snapchat.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-snapchat w3-hover-opacity w3-large"></i>
+          </a>
+          <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-pinterest w3-hover-opacity w3-large"></i>
+          </a>
+          <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-twitter w3-hover-opacity w3-large"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin w3-hover-opacity w3-large"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <b>&copy; Todos los derechos reservados: Hershey Inc.</b>
+      </div>
+    </footer>
+  
+  
+    <div class="escribeme-bebe">
+      <center> <b>&copy; Todos los derechos reservados: Esmeralda Clímaco(2007)</b></center>
+      <p><b>E-mail: esmeraldaclimaco@gmail.com</b> </p>
+      <a href="https://www.youtube.com/channel/esmeralda_sanchez_climaco" target="_blank"><i
+          class="fab fa-youtube"></i></a>
+    </div>
+  <script>
+    // Temporizador de cuenta regresiva
+    var countDownDate = new Date("Sep 29, 2024 23:59:59").getTime();
+    var countdownfunction = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+      if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("countdown").innerHTML = "¡Promoción terminada!";
+      }
+    }, 1000);
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

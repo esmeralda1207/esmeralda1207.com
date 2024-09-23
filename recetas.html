@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas</title>
+    <link rel="shortcut icon" href="IMG/image.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-icon-color {
+            color: #491f18;
+            font-size: 20px;
+        }
+
+        .w3-jumbo {
+            font-size: 4rem;
+            color: #57271e;
+        }
+
+        #recetas {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #491f18;
+            border-color: #491f18;
+        }
+
+        .btn-primary:hover {
+            background-color: #57271e;
+            border-color: #57271e;
+        }
+        .escribeme-bebe {
+      background-color: #8bffef;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 5px;
+      /* Espaciado interno */
+      width: 100%;
+      /* Ancho completo */
+      height: auto;
+      /* Ajustar la altura automáticamente */
+      font-size: 0.8rem;
+      /* Tamaño de fuente más pequeño */
+      display: flex;
+      /* Usar flexbox */
+      justify-content: space-between;
+      /* Espacio entre los elementos */
+      align-items: center;
+      /* Centrar verticalmente */
+      opacity: 0;
+      /* Hacer el contenido invisible */
+      transition: opacity 0.5s ease;
+      /* Transición suave */
+    }
+
+    .escribeme-bebe:hover {
+      opacity: 1;
+      /* Hacer visible el contenido al pasar el cursor */
+    }
+
+    .escribeme-bebe h6,
+    .escribeme-bebe p,
+    .escribeme-bebe a {
+      margin: 0;
+      /* Eliminar márgenes */
+      padding: 0 10px;
+      /* Espaciado interno entre elementos */
+    }
+
+    .escribeme-bebe i {
+      font-size: 24px;
+      /* Tamaño del ícono */
+      margin: 0;
+      /* Eliminar márgenes */
+    }
+
+    .w3-jumbo {
+      font-size: 4rem;
+      /* Ajusta el tamaño según sea necesario */
+      color: #57271e;
+      /* Cambia este valor al color deseado */
+    }
+
+    .custom-footer {
+      background-color: #491f18;
+      /* Color de fondo del footer */
+      color: white;
+      /* Color del texto */
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .social-icons a {
+      color: white;
+      margin-left: 15px;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #ffcc00;
+      /* Color al pasar el ratón por encima */
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #555;
+      padding-top: 10px;
+      font-size: 1em;
+      color: #ccc;
+      /* Color del texto de copyright */
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="index.html" class="w3-bar-item w3-button w3-wide">
+                <img src="IMG/image.png" alt="Logo" class="logo-img">
+            </a>
+
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home nav-icon-color"></i> Inicio</a>
+        <a href="recetas.html" class="w3-bar-item w3-button"><i class="fa fa-utensils nav-icon-color"></i> Recetas</a>
+        <a href="nosotros.html" class="w3-bar-item w3-button"><i class="fa fa-scroll nav-icon-color"></i> Nosotros</a>
+        <a href="promociones-ofertas.html" class="w3-bar-item w3-button"><i class="fa fa-tags nav-icon-color"></i>
+          Promociones y Ofertas</a>
+      </div>
+
+
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Button to toggle navbar on small screens -->
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu_nav"
+        aria-controls="menu_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Carrusel -->
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Slide/_Celebra la temporada con Hershey's. Dulces para cada festividad..jpg"
+                    class="d-block w-100 dp-lg" alt="Pastelería 1">
+            </div>
+            <div class="carousel-item">
+                <img src="Slide/Kit Kat Toma un break, toma un Kit Kat..jpg" class="d-block w-100 dp-lg"
+                    alt="Pastelería 2">
+            </div>
+            <div class="carousel-item">
+                <img src="Slide/Reese's..jpg" class="d-block w-100 dp-lg" alt="Pastelería 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="w3-container w3-center w3-padding-64">
+    <h2 class="w3-xxlarge"><b>Descubre las mejores recetas con Hershey's</b></h2>
+    <p>En nuestra página de recetas, te invitamos a explorar una variedad de deliciosas creaciones que puedes preparar con los icónicos productos de Hershey's. Desde postres irresistibles hasta ideas innovadoras para tus celebraciones, aquí encontrarás inspiración para llevar tu amor por el chocolate a otro nivel. Ya seas un experto en la cocina o un entusiasta culinario, nuestras recetas están diseñadas para que disfrutes del proceso y sorprendas a todos con sabores inigualables. ¡Prepárate para endulzar cada momento con Hershey's!</p>
+  </div>
+  
+
+    <!-- Recetas Section -->
+    <section id="recetas" class="container mt-5">
+
+
+
+<h2 class="text-center mb-4"><strong>Recetas con Productos Hershey</strong></h2>
+        
+        <div class="row">
+    <!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal1" tabindex="-1" aria-labelledby="recipeModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel1">Brownies con Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Deliciosos brownies hechos con chocolate Hershey's para un sabor intenso y irresistible.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>1/2 taza de mantequilla</li>
+            <li>1 taza de azúcar</li>
+            <li>2 huevos</li>
+            <li>1/3 taza de cacao en polvo Hershey's</li>
+            <li>1/2 taza de harina</li>
+            <li>1/4 cucharadita de sal</li>
+            <li>1/4 cucharadita de polvo para hornear</li>
+          </ul>
+          <p>Instrucciones: Precalienta el horno a 175°C, mezcla los ingredientes y hornea por 20-25 minutos.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 1 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/49-hershey-triple-chocolate-brownies.jpg" class="card-img-top" alt="Receta 1">
+      <div class="card-body">
+        <h5 class="card-title">Brownies con Hershey's</h5>
+        <p class="card-text">Deliciosos brownies hechos con chocolate Hershey's para un sabor intenso e irresistible.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal1">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+            <!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal2" tabindex="-1" aria-labelledby="recipeModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel2">Galletas con Chips Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Galletas crujientes con chips de chocolate Hershey's, perfectas para cualquier ocasión.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>1 taza de mantequilla</li>
+            <li>1 taza de azúcar</li>
+            <li>2 huevos</li>
+            <li>2 tazas de harina</li>
+            <li>1 taza de chips de chocolate Hershey's</li>
+          </ul>
+          <p>Instrucciones: Precalienta el horno a 180°C, mezcla los ingredientes y hornea por 10-12 minutos.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal2" tabindex="-1" aria-labelledby="recipeModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel2">Galletas con Chips Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Galletas crujientes con chips de chocolate Hershey's, perfectas para cualquier ocasión.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>1 taza de mantequilla</li>
+            <li>1 taza de azúcar</li>
+            <li>2 huevos</li>
+            <li>2 tazas de harina</li>
+            <li>1 taza de chips de chocolate Hershey's</li>
+          </ul>
+          <p>Instrucciones: Precalienta el horno a 180°C, mezcla los ingredientes y hornea por 10-12 minutos.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 2 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/OIP (6).jpeg" class="card-img-top" alt="Receta 2">
+      <div class="card-body">
+        <h5 class="card-title">Galletas con Chips Hershey's</h5>
+        <p class="card-text">Galletas crujientes con chips de chocolate Hershey's, perfectas para cualquier ocasión.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal2">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  
+            <!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal3" tabindex="-1" aria-labelledby="recipeModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel3">Tarta de Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Una tarta decadente hecha con chocolate Hershey's, ideal para celebraciones especiales.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>200g de chocolate Hershey's</li>
+            <li>1 taza de crema</li>
+            <li>1 base de galleta</li>
+          </ul>
+          <p>Instrucciones: Derrite el chocolate, mézclalo con la crema y viértelo sobre la base de galleta. Refrigera por 2 horas.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 3 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/OIP (7).jpeg" class="card-img-top" alt="Receta 3">
+      <div class="card-body">
+        <h5 class="card-title">Tarta de Chocolate Hershey's</h5>
+        <p class="card-text">Una tarta decadente hecha con chocolate Hershey's, ideal para celebraciones especiales.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal3">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal4" tabindex="-1" aria-labelledby="recipeModalLabel4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel4">Muffins de Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Muffins esponjosos y ricos en chocolate Hershey's, perfectos para un desayuno delicioso.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>2 tazas de harina</li>
+            <li>1/2 taza de azúcar</li>
+            <li>1/2 taza de cacao en polvo Hershey's</li>
+            <li>1 taza de leche</li>
+            <li>1 huevo</li>
+            <li>1/2 taza de chispas de chocolate Hershey's</li>
+          </ul>
+          <p>Instrucciones: Mezcla los ingredientes, vierte en moldes de muffins y hornea a 180°C por 15-20 minutos.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 4 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/proxy-image (16).jpeg" class="card-img-top" alt="Muffins de Chocolate">
+      <div class="card-body">
+        <h5 class="card-title">Muffins de Chocolate Hershey's</h5>
+        <p class="card-text">Muffins esponjosos y ricos en chocolate Hershey's, perfectos para un desayuno delicioso.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal4">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal5" tabindex="-1" aria-labelledby="recipeModalLabel5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel5">Mousse de Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Una mousse suave y cremosa con sabor a chocolate Hershey's, ideal para los amantes del chocolate.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>200g de chocolate Hershey's</li>
+            <li>3 huevos (separar claras y yemas)</li>
+            <li>1/4 taza de azúcar</li>
+            <li>1 taza de crema batida</li>
+          </ul>
+          <p>Instrucciones: Derrite el chocolate, mezcla con las yemas, incorpora las claras batidas y refrigera por 2 horas.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 5 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/proxy-image (17).jpeg" class="card-img-top" alt="Mousse de Chocolate">
+      <div class="card-body">
+        <h5 class="card-title">Mousse de Chocolate Hershey's</h5>
+        <p class="card-text">Una mousse suave y cremosa con sabor a chocolate Hershey's, ideal para los amantes del chocolate.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal5">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal6" tabindex="-1" aria-labelledby="recipeModalLabel6" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel6">Trufas de Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Trufas decadentes y ricas en sabor hechas con una mezcla cremosa de chocolate Hershey's.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>200g de chocolate Hershey's</li>
+            <li>100ml de crema para batir</li>
+            <li>1 cucharadita de vainilla</li>
+            <li>Cacao en polvo para cubrir</li>
+          </ul>
+          <p>Instrucciones: Derrite el chocolate, mezcla con la crema y vainilla, enfría y forma bolitas. Cubre con cacao en polvo.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 6 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/trufas.jpeg" class="card-img-top" alt="Trufas de Chocolate">
+      <div class="card-body">
+        <h5 class="card-title">Trufas de Chocolate Hershey's</h5>
+        <p class="card-text">Trufas decadentes y ricas en sabor hechas con una mezcla cremosa de chocolate Hershey's.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal6">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal7" tabindex="-1" aria-labelledby="recipeModalLabel7" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel7">Cheesecake de Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Un cheesecake cremoso con un toque de chocolate Hershey's, perfecto para cualquier celebración.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>200g de queso crema</li>
+            <li>100g de azúcar</li>
+            <li>200g de chocolate Hershey's derretido</li>
+            <li>1 taza de crema</li>
+            <li>Base de galleta</li>
+          </ul>
+          <p>Instrucciones: Mezcla los ingredientes, vierte sobre la base de galleta y refrigera por 4 horas.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 7 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/proxy-image (18).jpeg" class="card-img-top" alt="Cheesecake de Chocolate">
+      <div class="card-body">
+        <h5 class="card-title">Cheesecake de Chocolate Hershey's</h5>
+        <p class="card-text">Un cheesecake cremoso con un toque de chocolate Hershey's, perfecto para cualquier celebración.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal7">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal8" tabindex="-1" aria-labelledby="recipeModalLabel8" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel8">Batido de Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Un batido refrescante y delicioso hecho con chocolate Hershey's, perfecto para cualquier momento del día.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>1 taza de leche</li>
+            <li>2 cucharadas de cacao en polvo Hershey's</li>
+            <li>2 bolas de helado de vainilla</li>
+            <li>Hielo</li>
+          </ul>
+          <p>Instrucciones: Mezcla todos los ingredientes en la licuadora hasta obtener una consistencia suave.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 8 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/proxy-image (19).jpeg" class="card-img-top" alt="Batido de Chocolate">
+      <div class="card-body">
+        <h5 class="card-title">Batido de Chocolate Hershey's</h5>
+        <p class="card-text">Un batido refrescante y delicioso hecho con chocolate Hershey's, perfecto para cualquier momento del día.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal8">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal9" tabindex="-1" aria-labelledby="recipeModalLabel9" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel9">Brownies con Nuez y Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Brownies suaves con trozos de nuez y chocolate Hershey's para un sabor irresistible.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>1/2 taza de mantequilla</li>
+            <li>1 taza de azúcar</li>
+            <li>2 huevos</li>
+            <li>1/3 taza de cacao en polvo Hershey's</li>
+            <li>1/2 taza de harina</li>
+            <li>1/4 taza de nueces picadas</li>
+            <li>1/4 cucharadita de sal</li>
+            <li>1/4 cucharadita de polvo para hornear</li>
+          </ul>
+          <p>Instrucciones: Precalienta el horno a 175°C, mezcla los ingredientes y hornea por 20-25 minutos.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 9 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/proxy-image (20).jpeg" class="card-img-top" alt="Brownies con Nuez">
+      <div class="card-body">
+        <h5 class="card-title">Brownies con Nuez y Chocolate Hershey's</h5>
+        <p class="card-text">Brownies suaves con trozos de nuez y chocolate Hershey's para un sabor irresistible.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal9">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal10" tabindex="-1" aria-labelledby="recipeModalLabel10" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel10">Pancakes de Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Pancakes esponjosos con un toque de chocolate Hershey's, ideales para un desayuno indulgente.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>1 taza de harina</li>
+            <li>2 cucharadas de cacao en polvo Hershey's</li>
+            <li>1 huevo</li>
+            <li>1 taza de leche</li>
+            <li>1 cucharada de azúcar</li>
+            <li>1/2 cucharadita de polvo para hornear</li>
+          </ul>
+          <p>Instrucciones: Mezcla los ingredientes, vierte la mezcla en un sartén caliente y cocina hasta que estén dorados.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 10 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/proxy-image (21).jpeg" class="card-img-top" alt="Pancakes de Chocolate">
+      <div class="card-body">
+        <h5 class="card-title">Pancakes de Chocolate Hershey's</h5>
+        <p class="card-text">Pancakes esponjosos con un toque de chocolate Hershey's, ideales para un desayuno indulgente.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal10">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal11" tabindex="-1" aria-labelledby="recipeModalLabel11" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel11">Tarta de Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Una tarta exquisita con una base de galleta y un relleno de chocolate Hershey's, perfecta para ocasiones especiales.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>Base de galletas trituradas</li>
+            <li>200g de chocolate Hershey's</li>
+            <li>100ml de crema para batir</li>
+            <li>1 cucharadita de vainilla</li>
+          </ul>
+          <p>Instrucciones: Derrite el chocolate con la crema, viértelo sobre la base de galleta y refrigera hasta que esté firme.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 11 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/proxy-image (22).jpeg" class="card-img-top" alt="Tarta de Chocolate">
+      <div class="card-body">
+        <h5 class="card-title">Tarta de Chocolate Hershey's</h5>
+        <p class="card-text">Una tarta exquisita con una base de galleta y un relleno de chocolate Hershey's, perfecta para ocasiones especiales.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal11">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal12" tabindex="-1" aria-labelledby="recipeModalLabel12" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel12">Fondue de Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Un fondue de chocolate suave y derretido, perfecto para disfrutar con frutas frescas y bizcochos.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>200g de chocolate Hershey's</li>
+            <li>1/2 taza de crema para batir</li>
+            <li>Frutas y bizcochos para acompañar</li>
+          </ul>
+          <p>Instrucciones: Derrite el chocolate con la crema y sirve caliente con tus acompañamientos favoritos.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 12 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/proxy-image (23).jpeg" class="card-img-top" alt="Fondue de Chocolate">
+      <div class="card-body">
+        <h5 class="card-title">Fondue de Chocolate Hershey's</h5>
+        <p class="card-text">Un fondue de chocolate suave y derretido, perfecto para disfrutar con frutas frescas y bizcochos.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal12">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal para la receta -->
+<div class="modal fade" id="recipeModal13" tabindex="-1" aria-labelledby="recipeModalLabel13" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalLabel13">Pan de Plátano con Chocolate Hershey's</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Un pan de plátano húmedo con chips de chocolate Hershey's para un toque extra de dulzura.</p>
+          <p>Ingredientes:</p>
+          <ul>
+            <li>3 plátanos maduros</li>
+            <li>1/2 taza de azúcar</li>
+            <li>1 huevo</li>
+            <li>1 taza de harina</li>
+            <li>1/2 taza de chips de chocolate Hershey's</li>
+          </ul>
+          <p>Instrucciones: Mezcla los ingredientes y hornea a 180°C por 45 minutos hasta que esté dorado.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Receta 13 -->
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img src="IMG/proxy-image (24).jpeg" class="card-img-top" alt="Pan de Plátano con Chocolate">
+      <div class="card-body">
+        <h5 class="card-title">Pan de Plátano con Chocolate Hershey's</h5>
+        <p class="card-text">Un pan de plátano húmedo con chips de chocolate Hershey's para un toque extra de dulzura.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal13">
+          Ver Receta
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Recipe 14 -->
+<div class="col-md-4 mb-4">
+    <div class="card">
+        <img src="IMG/proxy-image (25).jpeg" class="card-img-top" alt="Barras de Chocolate y Mantequilla de Maní">
+        <div class="card-body">
+            <h5 class="card-title">Barras de Chocolate y Mantequilla de Maní Hershey's</h5>
+            <p class="card-text">Barras dulces y saladas con capas de chocolate Hershey's y mantequilla de maní, perfectas para un snack energético.</p>
+            <a href="receta14.html" class="btn btn-primary">Ver Receta</a>
+        </div>
+    </div>
+</div>
+<!-- Recipe 15 -->
+<div class="col-md-4 mb-4">
+    <div class="card">
+        <img src="IMG/proxy-image (26).jpeg" class="card-img-top" alt="Martini de Chocolate">
+        <div class="card-body">
+            <h5 class="card-title">Martini de Chocolate Hershey's</h5>
+            <p class="card-text">Un martini elegante y sofisticado con una mezcla de chocolate Hershey's, ideal para una noche especial.</p>
+            <a href="receta15.html" class="btn btn-primary">Ver Receta</a>
+        </div>
+    </div>
+</div>
+    </section>
+
+   <!-- Footer -->
+<footer class="w3-container custom-footer">
+    <div class="footer-content">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook w3-hover-opacity w3-large"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram w3-hover-opacity w3-large"></i>
+            </a>
+            <a href="https://www.snapchat.com/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-snapchat w3-hover-opacity w3-large"></i>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-pinterest w3-hover-opacity w3-large"></i>
+            </a>
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-twitter w3-hover-opacity w3-large"></i>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin w3-hover-opacity w3-large"></i>
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <b>&copy; Todos los derechos reservados: Hershey Inc.</b>
+    </div>
+  </footer>
+  
+  
+    <div class="escribeme-bebe">
+     <center> <b>&copy; Todos los derechos reservados: Esmeralda Clímaco(2007)</b></center>
+      <p><b>E-mail: esmeraldaclimaco@gmail.com</b> </p> 
+      <a href="https://www.youtube.com/channel/esmeralda_sanchez_climaco" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+  
+
+    <!-- Scripts de Bootstrap y personalizados -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="JS/personalizado.js"></script>
+</body>
+
+</html>
